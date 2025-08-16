@@ -11,7 +11,6 @@
       text-align: center;
       padding: 12px;
     }
-
     nav a {
       color: white;
       margin: 0 15px;
@@ -19,10 +18,7 @@
       font-weight: bold;
       font-size: 16px;
     }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     .container {
       max-width: 1000px;
@@ -30,61 +26,46 @@
       padding: 1rem;
       font-family: Arial, sans-serif;
     }
+    h1, h2 { text-align: center; margin-bottom: 1rem; }
+    .section-spacer { margin-top: 2.25rem; }
 
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .sub-nav {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-
-    .sub-nav a {
-      background-color: navy;
-      color: white;
-      padding: 8px 16px;
-      margin: 0 8px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .sub-nav a:hover {
-      background-color: #002060;
-    }
-
+    .table-wrap { overflow-x: auto; border-radius: 8px; }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
+      min-width: 520px;
     }
-
     th, td {
       border: 1px solid #ccc;
       padding: 12px;
       text-align: left;
     }
+    th { background-color: #003087; color: white; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
 
-    th {
-      background-color: #003087;
-      color: white;
+    .day-section h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: #555;
     }
 
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
+    /* --- Coordinator dropdown rows --- */
+    .row-toggle {
+      background: none; border: 0; padding: 0; margin: 0;
+      color: #003087; font-weight: 600; cursor: pointer; text-decoration: underline;
     }
-
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.5rem;
+    .row-toggle:focus { outline: 2px solid #9ec5ff; outline-offset: 2px; }
+    .details-row td {
+      background: #f9fbff;
+      border-top: 1px solid #cfe0ff;
+      padding: 14px 12px;
     }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
+    .details-row h4 { margin: 0 0 .25rem; font-size: 1rem; }
+    .details-row p  { margin: 0 0 .5rem; color: #333; }
+    .details-row ul { margin: .25rem 0 0 1.25rem; }
   </style>
 </head>
 <body>
@@ -100,169 +81,405 @@
   <div class="container">
     <h1>Coordinator & Supervisor Dashboard</h1>
 
-    <div class="sub-nav">
-      <a href="#supervisor schedule">📅 Supervisor Schedule</a>
-      <a href="#supervisor assignments">📋 Supervisor Assignments</a>
-      <a href="#coordinator schedule">📅 Coordinator Schedule</a>
-      <a href="#coordinator assignments">📋 Coordinator Assignments</a>
-    </div>
-
-<h2 id="supervisor schedule">📅 Supervisor Schedule</h2>
+    <!-- ===================== COORDINATOR FIRST ===================== -->
+    <h2 id="coordinator-schedule">📅 Coordinator Schedule</h2>
 
     <div class="day-section">
       <h3>Thursday, August 28</h3>
-      <table>
-        <thead>
-          <tr><th>Time</th><th>Assignment</th><th>Location</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>6:30–7:00 AM</td><td>Supervisor Check-in</td><td>North Side of Marriott Center</td></tr>
-          <tr><td>7:00–7:30 AM</td><td>Help with Mentor Check-In</td><td>North Side of Marriott Center</td></tr>
-          <tr><td>7:30–8:30 AM</td><td>Prepare for Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
-          <tr><td>8:30–9:30 AM</td><td>Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
-          <tr><td>9:30–10:00 AM</td><td>Help Coordinators Seat Students</td><td>Marriott Center</td></tr>
-          <tr><td>10:00–11:00 AM</td><td>Enjoy Cougar Rally</td><td>Marriott Center</td></tr>
-          <tr><td>11:00–11:40 AM</td><td>Convocation</td><td>Marriott Center</td></tr>
-          <tr><td>11:40–1:00 PM</td><td>Help with Lunch</td><td>JFSB Quad</td></tr>
-          <tr><td>1:00–3:00 PM</td><td>Free to do what you want</td><td>JFSB Quad</td></tr>
-          <tr><td>3:00–3:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Assignment</th><th scope="col">Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>6:30–7:00 AM</td><td>Coordinator Check-in</td><td>North Side of Marriott Center</td></tr>
+            <tr><td>7:00–7:30 AM</td><td>Mentor Check-In</td><td>North Side of Marriott Center</td></tr>
+            <tr><td>7:30–8:30 AM</td><td>Prepare for Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
+            <tr><td>8:30–9:30 AM</td><td>Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
+            <tr><td>9:30–10:00 AM</td><td>Help Seat Students</td><td>Marriott Center</td></tr>
+            <tr><td>10:00–11:00 AM</td><td>Cougar Rally</td><td>Marriott Center</td></tr>
+            <tr><td>11:00–12:00 PM</td><td>Convocation</td><td>Marriott Center</td></tr>
+            <tr><td>12:00–1:00 PM</td><td>Lunch</td><td>JFSB Quad</td></tr>
+            <tr><td>1:00–3:00 PM</td><td>On Call for Becoming BYU</td><td>JFSB Quad</td></tr>
+            <tr><td>3:00–3:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="day-section">
       <h3>Friday, August 29</h3>
-      <table>
-        <thead>
-          <tr><th>Time</th><th>Assignment</th><th>Location</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>7:45–8:00 AM</td><td>Coordinator Check-in</td><td>JFSB Quad</td></tr>
-          <tr><td>8:00–8:15 AM</td><td>Help with Mentor Check-in</td><td>JFSB Quad</td></tr>
-          <tr><td>8:15–8:30 AM</td><td>Help Mentors and Coordinators as needed</td><td>JFSB Quad</td></tr>
-          <tr><td>8:30–12:00 PM</td><td>Help with Late Check-in</td><td>JFSB Quad</td></tr>
-          <tr><td>9:00–11:40 PM</td><td>Free to do what you want</td><td>Across Campus</td></tr>
-          <tr><td>11:40–12:45 PM</td><td>Help with Lunch</td><td>JFSB Quad</td></tr>
-          <tr><td>12:45–1:15 PM</td><td>Help College Experiences</td><td>Brigham Square</td></tr>
-          <tr><td>1:15–1:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Assignment</th><th scope="col">Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7:45–8:00 AM</td><td>Coordinator Check-in</td><td>JFSB Quad</td></tr>
+            <tr><td>8:00–8:15 AM</td><td>Mentor Check-in — Breakfast</td><td>JFSB Quad</td></tr>
+            <tr><td>8:15–8:30 AM</td><td>Help Mentors Find their Spots</td><td>JFSB Quad</td></tr>
+            <tr><td>8:30–12:00 PM</td><td>Help with Late Check-in</td><td>JFSB Quad</td></tr>
+            <tr><td>9:00–12:00 PM</td><td>Monitor Cougar Crash Course</td><td>Across Campus</td></tr>
+            <tr><td>12:00–12:45 PM</td><td>Lunch</td><td>JFSB Quad</td></tr>
+            <tr><td>12:45–1:15 PM</td><td>Help Monitor College Experiences</td><td>Brigham Square</td></tr>
+            <tr><td>1:15–1:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-<h2 id="supervisor assignments">📋 Supervisor Assignment Breakdown</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Group Color</th>
-      <th>Assignment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Anjilee</td><td>🟡 Yellow</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Becky</td><td>🟠 Orange</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Danja</td><td>🟢 Green</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Debi</td><td>🔵 Blue</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Jeanne</td><td>🔴 Pink</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Sam</td><td>Every Color</td><td>Day 1 Extra Hands</td></tr>
-    <tr><td>Sandi</td><td>🟣 Purple</td><td>Day 1 Extra Hands</td></tr>
-  </tbody>
-</table>
- 
-
-    <h2 id="coordinator schedule">📅 Coordinator Schedule</h2>
-
-    <div class="day-section">
-      <h3>Thursday, August 28</h3>
-      <table>
+    <h2 id="coordinator-assignments" class="section-spacer">📋 Coordinator Assignment Breakdown</h2>
+    <div class="table-wrap">
+      <table id="coordinator-assignments-table">
         <thead>
-          <tr><th>Time</th><th>Assignment</th><th>Location</th></tr>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>6:30–7:00 AM</td><td>Coordinator Check-in</td><td>North Side of Marriott Center</td></tr>
-          <tr><td>7:00–7:30 AM</td><td>Mentor Check-In</td><td>North Side of Marriott Center</td></tr>
-          <tr><td>7:30–8:30 AM</td><td>Prepare for Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
-          <tr><td>8:30–9:30 AM</td><td>Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
-          <tr><td>9:30–10:00 AM</td><td>Help Seat Students</td><td>Marriott Center</td></tr>
-          <tr><td>10:00–11:00 AM</td><td>Cougar Rally</td><td>Marriott Center</td></tr>
-          <tr><td>11:00–12:00 PM</td><td>Convocation</td><td>Marriott Center</td></tr>
-          <tr><td>12:00–1:00 PM</td><td>Lunch</td><td>JFSB Quad</td></tr>
-          <tr><td>1:00–3:00 PM</td><td>On Call for Becoming BYU</td><td>JFSB Quad</td></tr>
-          <tr><td>3:00–3:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Avery" data-role="yellow" aria-expanded="false" aria-controls="detail-avery">Avery</button></td>
+            <td>🟡 Yellow Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Sage" data-role="yellow" aria-expanded="false" aria-controls="detail-sage">Sage</button></td>
+            <td>🟡 Yellow Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Matthew" data-role="purple" aria-expanded="false" aria-controls="detail-matthew">Matthew</button></td>
+            <td>🟣 Purple Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Emily" data-role="orange" aria-expanded="false" aria-controls="detail-emily">Emily</button></td>
+            <td>🟠 Orange Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Marissa" data-role="daidres-army" aria-expanded="false" aria-controls="detail-marissa">Marissa</button></td>
+            <td>Daidre's Army</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Katie" data-role="pink" aria-expanded="false" aria-controls="detail-katie">Katie</button></td>
+            <td>🔴 Pink Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Ben" data-role="green" aria-expanded="false" aria-controls="detail-ben">Ben</button></td>
+            <td>🟢 Green Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Isaac" data-role="green" aria-expanded="false" aria-controls="detail-isaac">Isaac</button></td>
+            <td>🟢 Green Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Madeline" data-role="blue" aria-expanded="false" aria-controls="detail-madeline">Madeline</button></td>
+            <td>🔵 Blue Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Monte" data-role="daidres-army" aria-expanded="false" aria-controls="detail-monte">Monte</button></td>
+            <td>Daidre's Army</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Spencer" data-role="blue" aria-expanded="false" aria-controls="detail-spencer">Spencer</button></td>
+            <td>🔵 Blue Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Allie" data-role="temp-staff-coordinator" aria-expanded="false" aria-controls="detail-allie">Allie</button></td>
+            <td>Temp Staff Coordinator</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Jonah" data-role="daidres-army" aria-expanded="false" aria-controls="detail-jonah">Jonah</button></td>
+            <td>Daidre's Army</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Natalie" data-role="daidres-army" aria-expanded="false" aria-controls="detail-natalie">Natalie</button></td>
+            <td>Daidre's Army</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Nicole" data-role="pink" aria-expanded="false" aria-controls="detail-nicole">Nicole</button></td>
+            <td>🔴 Pink Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Rachel" data-role="color-reps-coordinator" aria-expanded="false" aria-controls="detail-rachel">Rachel</button></td>
+            <td>Color Reps Coordinator</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Amanda" data-role="shadowing-micah" aria-expanded="false" aria-controls="detail-amanda">Amanda</button></td>
+            <td>Shadowing Micah</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Logan" data-role="silver" aria-expanded="false" aria-controls="detail-logan">Logan</button></td>
+            <td>⚪️ Silver Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Jared" data-role="daidres-army-coordinator" aria-expanded="false" aria-controls="detail-jared">Jared</button></td>
+            <td>Daidre's Army Coordinator</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Daisy" data-role="purple" aria-expanded="false" aria-controls="detail-daisy">Daisy</button></td>
+            <td>🟣 Purple Color Rep</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Emma" data-role="daidres-army" aria-expanded="false" aria-controls="detail-emma">Emma</button></td>
+            <td>Daidre's Army</td>
+          </tr>
+          <tr>
+            <td><button class="row-toggle" data-person="Jae" data-role="daidres-army" aria-expanded="false" aria-controls="detail-jae">Jae</button></td>
+            <td>Daidre's Army</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
+    <!-- ===================== SUPERVISOR AFTER ===================== -->
+    <h2 id="supervisor-schedule" class="section-spacer">📅 Supervisor Schedule</h2>
+
     <div class="day-section">
-      <h3>Friday, August 29</h3>
-      <table>
-        <thead>
-          <tr><th>Time</th><th>Assignment</th><th>Location</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>7:45–8:00 AM</td><td>Coordinator Check-in</td><td>JFSB Quad</td></tr>
-          <tr><td>8:00–8:15 AM</td><td>Mentor Check-in — Breakfast</td><td>JFSB Quad</td></tr>
-          <tr><td>8:15–8:30 AM</td><td>Help Mentors Find their Spots</td><td>JFSB Quad</td></tr>
-          <tr><td>8:30–12:00 PM</td><td>Help with Late Check-in</td><td>JFSB Quad</td></tr>
-          <tr><td>9:00–12:00 PM</td><td>Monitor Cougar Crash Course</td><td>Across Campus</td></tr>
-          <tr><td>12:00–12:45 PM</td><td>Lunch</td><td>JFSB Quad</td></tr>
-          <tr><td>12:45–1:15 PM</td><td>Help Monitor College Experiences</td><td>Brigham Square</td></tr>
-          <tr><td>1:15–1:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
-      </table>
+      <h3>Thursday, August 28</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Assignment</th><th scope="col">Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>6:30–7:00 AM</td><td>Supervisor Check-in</td><td>North Side of Marriott Center</td></tr>
+            <tr><td>7:00–7:30 AM</td><td>Help with Mentor Check-In</td><td>North Side of Marriott Center</td></tr>
+            <tr><td>7:30–8:30 AM</td><td>Prepare for Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
+            <tr><td>8:30–9:30 AM</td><td>Student Check-in</td><td>Marriott Center Parking Lot</td></tr>
+            <tr><td>9:30–10:00 AM</td><td>Help Coordinators Seat Students</td><td>Marriott Center</td></tr>
+            <tr><td>10:00–11:00 AM</td><td>Enjoy Cougar Rally</td><td>Marriott Center</td></tr>
+            <tr><td>11:00–11:40 AM</td><td>Convocation</td><td>Marriott Center</td></tr>
+            <tr><td>11:40–1:00 PM</td><td>Help with Lunch</td><td>JFSB Quad</td></tr>
+            <tr><td>1:00–3:00 PM</td><td>Free to do what you want</td><td>JFSB Quad</td></tr>
+            <tr><td>3:00–3:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
+    <div class="day-section">
+      <h3>Friday, August 29</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Assignment</th><th scope="col">Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7:45–8:00 AM</td><td>Supervisor Check-in</td><td>JFSB Quad</td></tr>
+            <tr><td>8:00–8:15 AM</td><td>Help with Mentor Check-in</td><td>JFSB Quad</td></tr>
+            <tr><td>8:15–8:30 AM</td><td>Help Mentors and Coordinators as needed</td><td>JFSB Quad</td></tr>
+            <tr><td>8:30–12:00 PM</td><td>Help with Late Check-in</td><td>JFSB Quad</td></tr>
+            <tr><td>9:00–11:40 AM</td><td>Free to do what you want</td><td>Across Campus</td></tr>
+            <tr><td>11:40–12:45 PM</td><td>Help with Lunch</td><td>JFSB Quad</td></tr>
+            <tr><td>12:45–1:15 PM</td><td>Help College Experiences</td><td>Brigham Square</td></tr>
+            <tr><td>1:15–1:30 PM</td><td>Clean Up</td><td>JKB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-    <h2 id="coordinator assignments">📋 Coordinator Assignment Breakdown</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Avery</td><td>🟡 Yellow Color Rep</td></tr>
-    <tr><td>Sage</td><td>🟡 Yellow Color Rep</td></tr>
-    <tr><td>Matthew</td><td>🟣 Purple Color Rep</td></tr>
-    <tr><td>Emily</td><td>🟠 Orange Color Rep</td></tr>
-    <tr><td>Marissa</td><td>Daidre's Army</td></tr>
-    <tr><td>Katie</td><td>🔴 Pink Color Rep</td></tr>
-    <tr><td>Ben</td><td>🟢 Green Color Rep</td></tr>
-    <tr><td>Isaac</td><td>🟢 Green Color Rep</td></tr>
-    <tr><td>Madeline</td><td>🔵 Blue Color Rep</td></tr>
-    <tr><td>Monte</td><td>Daidre's Army</td></tr>
-    <tr><td>Spencer</td><td>🔵 Blue Color Rep</td></tr>
-    <tr><td>Allie</td><td>Temp Staff Coordinator</td></tr>
-    <tr><td>Jonah</td><td>Daidre's Army</td></tr>
-    <tr><td>Natalie</td><td>Daidre's Army</td></tr>
-    <tr><td>Nicole</td><td>🔴 Pink Color Rep</td></tr>
-    <tr><td>Rachel</td><td>Color Reps Coordinator</td></tr>
-    <tr><td>Amanda</td><td>Shadowing Micah</td></tr>
-    <tr><td>Logan</td><td>⚪️ Silver Color Rep</td></tr>
-    <tr><td>Jared</td><td>Daidre's Army Coordinator</td></tr>
-    <tr><td>Daisy</td><td>🟣 Purple Color Rep</td></tr>
-    <tr><td>Emma</td><td>Daidre's Army</td></tr>
-    <tr><td>Jae</td><td>Daidre's Army</td></tr>
-  </tbody>
-</table>
+    <h2 id="supervisor-assignments" class="section-spacer">📋 Supervisor Assignment Breakdown</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Group Color</th>
+            <th scope="col">Assignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Anjilee</td><td>🟡 Yellow</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Becky</td><td>🟠 Orange</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Danja</td><td>🟢 Green</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Debi</td><td>🔵 Blue</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Jeanne</td><td>🔴 Pink</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Sam</td><td>Every Color</td><td>Day 1 Extra Hands</td></tr>
+          <tr><td>Sandi</td><td>🟣 Purple</td><td>Day 1 Extra Hands</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <footer>
-<p>Fall 2025 NSO | BYU First-Year Experience</p>
-</footer>
+    <p>Fall 2025 NSO | BYU First-Year Experience</p>
+  </footer>
 
   <script>
-  const loginTime = localStorage.getItem("loginTime");
-  const maxSession = 10 * 60 * 1000;
+    // Session/auth check
+    const loginTime = localStorage.getItem("loginTime");
+    const maxSession = 10 * 60 * 1000; // 10 minutes
+    if (!localStorage.getItem("authenticated") || !loginTime || Date.now() - parseInt(loginTime, 10) > maxSession) {
+      alert("Access denied or session expired. Please sign in again.");
+      localStorage.removeItem("authenticated");
+      localStorage.removeItem("loginTime");
+      window.location.href = "login.html";
+    }
 
-  if (!localStorage.getItem("authenticated") || !loginTime || Date.now() - parseInt(loginTime, 10) > maxSession) {
-    alert("Access denied or session expired. Please sign in again.");
-    localStorage.removeItem("authenticated");
-    localStorage.removeItem("loginTime");
-    window.location.href = "login.html";
-  }
-</script>
+    // ---------- Coordinator dropdown logic ----------
+    const ROLE_DETAILS = {
+      "yellow": {
+        title: "Yellow Color Rep",
+        intro: "Supports Yellow mentors/students and keeps flow on time.",
+        bullets: [
+          "Set up Yellow signage & supplies; verify mentor coverage.",
+          "Coordinate Mentor Check-in for Yellow; manage late arrivals.",
+          "Guide Yellow seating/transitions in the Marriott Center.",
+          "Assist lunch flow for Yellow; handle dietary needs.",
+          "Cover Late Check-in or spot gaps as needed."
+        ]
+      },
+      "blue":   { title: "Blue Color Rep", intro: "Blue cohort logistics.", bullets: [
+        "Set up Blue meet spot; confirm backups.",
+        "Assist seating/transitions during Rally & Convocation.",
+        "Monitor Blue table at lunch; coordinate cleanup.",
+        "Support Late Check-in coverage for Blue."
+      ]},
+      "green":  { title: "Green Color Rep", intro: "Green cohort logistics.", bullets: [
+        "Coordinate mentor assignments/backups for Green.",
+        "Wayfinding and student questions at transitions.",
+        "Help with College Experiences handoffs."
+      ]},
+      "pink":   { title: "Pink Color Rep", intro: "Pink cohort logistics.", bullets: [
+        "Confirm mentor attendance & redistribute if needed.",
+        "Manage seating blocks & transitions for Pink.",
+        "Assist with lunch lines and late arrivals."
+      ]},
+      "purple": { title: "Purple Color Rep", intro: "Purple cohort logistics.", bullets: [
+        "Spot setup, maps, and directional support.",
+        "Coordinate with supervisors for coverage gaps.",
+        "Monitor Cougar Crash Course participation."
+      ]},
+      "silver": { title: "Silver Color Rep", intro: "Floater cohort coverage.", bullets: [
+        "Fill in where needed at check-ins/transitions.",
+        "Assist Late Check-in during peak times.",
+        "On-call for College Experiences coverage."
+      ]},
+      "orange": { title: "Orange Color Rep", intro: "Supports Orange mentors/students and coordinates activities for their group.", bullets: [
+      "Set up Orange signage and meeting spot; verify mentor coverage.",
+      "Coordinate Mentor Check-in for Orange group.",
+      "Assist with seating and transitions during large events.",
+      "Support lunch flow for Orange; manage line organization.",
+      "Fill in for mentors or help with Late Check-in as needed."
+      ]},
+      "color-reps-coordinator": {
+        title: "Color Reps Coordinator",
+        intro: "Leads Color Reps and reallocates to hotspots.",
+        bullets: [
+          "Brief reps on flow & contingencies.",
+          "Reassign reps dynamically; communicate via GroupMe/text.",
+          "Escalate facility/logistics issues promptly."
+        ]
+      },
+      "daidres-army": {
+        title: "Daidre’s Army",
+        intro: "Flexible response team for high-need tasks.",
+        bullets: [
+          "Respond to bottlenecks (check-ins, seating, transitions).",
+          "Run equipment/supplies between sites.",
+          "Support College Experiences setup/teardown."
+        ]
+      },
+      "daidres-army-coordinator": {
+        title: "Daidre’s Army Coordinator",
+        intro: "Dispatches and tracks Army tasks.",
+        bullets: [
+          "Maintain live list of needs; assign runners/pairs.",
+          "Confirm completion; rotate breaks.",
+          "Coordinate cross-campus support with supervisors."
+        ]
+      },
+      "temp-staff-coordinator": {
+        title: "Temp Staff Coordinator",
+        intro: "Onboards and places temp staff.",
+        bullets: [
+          "Check in temps; distribute badges/shifts.",
+          "Place at high-traffic stations with clear instructions.",
+          "Collect at shift end; debrief issues."
+        ]
+      },
+      "shadowing-micah": {
+        title: "Shadowing Micah",
+        intro: "Learn global flow; assist comms and quick fixes.",
+        bullets: [
+          "Trail schedule checkpoints.",
+          "Handle quick signage fixes / questions.",
+          "Document issues for process improvements."
+        ]
+      }
+    };
 
+    const table = document.getElementById('coordinator-assignments-table');
 
+    function slug(s) {
+      return String(s).trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    }
 
+    function buildDetailsCell(person, roleKey) {
+      const role = ROLE_DETAILS[roleKey] || { title: "Role", intro: "", bullets: [] };
+      const wrapper = document.createElement('td');
+      wrapper.colSpan = 2;
+      const h = document.createElement('h4');
+      h.textContent = `${role.title} — ${person}`;
+      const p = document.createElement('p');
+      p.textContent = role.intro || '';
+      const ul = document.createElement('ul');
+      (role.bullets || []).forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+      wrapper.appendChild(h);
+      if (role.intro) wrapper.appendChild(p);
+      wrapper.appendChild(ul);
+      return wrapper;
+    }
+
+    function toggleRow(btn) {
+      const person = btn.getAttribute('data-person');
+      const role   = (btn.getAttribute('data-role') || '').toLowerCase();
+      const row    = btn.closest('tr');
+      const tbody  = row.parentElement;
+      const next   = row.nextElementSibling;
+
+      // If details row exists -> remove it
+      if (next && next.classList.contains('details-row')) {
+        tbody.removeChild(next);
+        btn.setAttribute('aria-expanded', 'false');
+        return;
+      }
+
+      // Close any other open detail rows (tidy mode)
+      tbody.querySelectorAll('.details-row').forEach(r => r.remove());
+      tbody.querySelectorAll('.row-toggle[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded','false'));
+
+      // Create & insert details row
+      const detailsTr = document.createElement('tr');
+      detailsTr.className = 'details-row';
+      detailsTr.id = 'detail-' + slug(person);
+
+      const td = buildDetailsCell(person, role);
+      detailsTr.appendChild(td);
+
+      tbody.insertBefore(detailsTr, row.nextElementSibling);
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    table?.addEventListener('click', (e) => {
+      const btn = e.target.closest('.row-toggle');
+      if (!btn) return;
+      e.preventDefault();
+      toggleRow(btn);
+    });
+
+    // Optional deep-link: #person=Name opens their row on load
+    window.addEventListener('load', () => {
+      const hash = location.hash.replace(/^#/, '');
+      const [k, v] = hash.split('=');
+      if ((k || '').toLowerCase() === 'person' && v) {
+        const target = table?.querySelector(`.row-toggle[data-person="${CSS.escape(decodeURIComponent(v))}"]`);
+        if (target) toggleRow(target);
+      }
+    });
+  </script>
 </body>
 </html>
